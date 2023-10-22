@@ -8,6 +8,7 @@ public class Game implements Runnable {
 	private final int FPS_SET = 120;
 
 	public Game() {
+
 		gamePanel = new GamePanel();
 		gameWindow = new GameWindow(gamePanel);
 		gamePanel.requestFocus();
