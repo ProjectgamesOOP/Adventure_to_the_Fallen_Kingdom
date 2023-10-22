@@ -40,16 +40,16 @@ public class GamePanel extends JPanel {
 	}
 
 	private void loadAnimations() {
-		animations = new BufferedImage[7][7];
+		animations = new BufferedImage[9][10];
 		for (int j =0; j < animations.length; j++ ) {
 			for (int i = 0; i < animations[j].length; i++)
-			    animations[j][i] = img.getSubimage(i*55,j*88,55,88);
+			    animations[j][i] = img.getSubimage(i*120,j*82,120,82);
 		}
 		
 	}
 
 	private void importImg() {
-		InputStream is = getClass().getResourceAsStream("/spritesheet.png");
+		InputStream is = getClass().getResourceAsStream("/player_sprites_sheet.png");
 
 		try {
 			img = ImageIO.read(is);
@@ -127,7 +127,7 @@ public class GamePanel extends JPanel {
 		updatePos();
 
 		
-		g.drawImage(animations[playerAction][aniIndex], (int) xDelta, (int) yDelta, 55, 88, null);
+		g.drawImage(animations[playerAction][aniIndex], (int) xDelta, (int) yDelta, 120, 82, null);
 
 	}
 
