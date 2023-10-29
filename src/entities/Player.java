@@ -6,19 +6,20 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-
 import javax.imageio.ImageIO;
+
+import utilz.LoadSave;
 
 public class Player extends Entity {
 	private BufferedImage[][] animations;
-	private int aniTick, aniIndex, aniSpeed = 22;
+	private int aniTick, aniIndex, aniSpeed = 25;
 	private int playerAction = IDLE;
 	private boolean moving = false, attacking = false;
 	private boolean left, up, right, down;
 	private float playerSpeed = 2.0f;
 
-	public Player(float x, float y) {
-		super(x, y);
+	public Player(float x, float y, int width,int height) {
+		super(x, y, width, height);
 		loadAnimations();
 	}
 
@@ -87,24 +88,14 @@ public class Player extends Entity {
 	}
 
 	private void loadAnimations() {
-		InputStream is = getClass().getResourceAsStream("/player_sprites_sheet.png");
-		try {
-			BufferedImage img = ImageIO.read(is);
 
-			animations = new BufferedImage[9][10];
-			for (int j = 0; j < animations.length; j++)
-				for (int i = 0; i < animations[j].length; i++)
-					animations[j][i] = img.getSubimage(i * 120, j * 82, 120, 82);
+		BufferedImage img = LoadSave.GetSpriteAtlas(LoadSave.PLAYER_ATLAS);
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				is.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		animations = new BufferedImage[9][10];
+		for (int j = 0; j < animations.length; j++)
+			for (int i = 0; i < animations[j].length; i++)
+				animations[j][i] = img.getSubimage(i * 120, j * 82, 120, 82);
+
 	}
 
 	public void resetDirBooleans() {
