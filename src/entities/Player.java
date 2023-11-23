@@ -32,7 +32,7 @@ public class Player extends Entity {
 	}
 
 	public void render(Graphics g) {
-		g.drawImage(animations[playerAction][aniIndex],(int)(hitbox.x - xDrawOffset), (int)(hitbox.y - yDrawOffset), 256, 160, null);
+		g.drawImage(animations[playerAction][aniIndex],(int)(hitbox.x - xDrawOffset), (int)(hitbox.y - yDrawOffset), width, height, null);
 		drawHitbox(g);
 	}
 
@@ -72,6 +72,7 @@ public class Player extends Entity {
 
 	private void updatePos() {
 		moving = false;
+		
 		if (!left && !right && !up && !down)
 			return;
 		
@@ -93,8 +94,7 @@ public class Player extends Entity {
 //			moving = true;
 //		}
 			
-//	}
-		if (CanMoveHere(hitbox.x, hitbox.y, hitbox.width, hitbox.height,lvlData)) {
+		if (CanMoveHere(hitbox.x + xSpeed, hitbox.y + ySpeed, hitbox.width, hitbox.height,lvlData)) {
      		hitbox.x +=xSpeed;
 			hitbox.y +=ySpeed;
 			moving = true;
@@ -112,6 +112,7 @@ public class Player extends Entity {
 				animations[j][i] = img.getSubimage(i * 120, j * 82, 120, 82);
 
 	}
+	
 	public void loadLvlData(int[][] lvlData) {
 		this.lvlData = lvlData;
 	}
