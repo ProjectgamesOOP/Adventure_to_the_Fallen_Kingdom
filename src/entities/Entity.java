@@ -21,7 +21,7 @@ public abstract class Entity {
 	
 	protected void drawHitbox(Graphics g) {
 		g.setColor(Color.PINK);
-		g.drawRect((int)hitbox.x ,(int)(hitbox.y + 20), (int) hitbox.width, (int) hitbox.height);
+		g.drawRect((int)hitbox.x ,(int)hitbox.y, (int) hitbox.width, (int) hitbox.height);
 	}
 
 	protected void initHitbox(float x, float y, float width, float height) {
