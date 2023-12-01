@@ -10,7 +10,7 @@ public class HelpMethods {
 		if (!IsSolid(x, y, lvlData))
 			if (!IsSolid(x + width, y + height, lvlData))
 				if (!IsSolid(x + width, y, lvlData))
-					if (!IsSolid(x, y + height, lvlData))
+					if (!IsSolid(x , y + height, lvlData))
 						return true;
 		return false;
 	}
@@ -65,6 +65,10 @@ public class HelpMethods {
 
 		return true;
 
+	}
+	
+	public static boolean IsFloor(Rectangle2D.Float hitbox, float xSpeed, int[][] lvlData) {
+		return IsSolid(hitbox.x + xSpeed, hitbox.y + hitbox.height + 1, lvlData);
 	}
 
 }
