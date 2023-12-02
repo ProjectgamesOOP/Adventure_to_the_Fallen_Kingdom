@@ -1,6 +1,7 @@
 package entities;
 
 import java.awt.Graphics;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -27,7 +28,8 @@ public class EnemyManager {
 
 	public void update(int[][] lvlData,Player player) {
 		for(Carnivorous c : carnivorous)
-			c.update(lvlData,player);
+			if(c.isActive())
+				c.update(lvlData,player);
 	}
 	
 	public void draw(Graphics g, int xLvlOffset) {
@@ -35,9 +37,25 @@ public class EnemyManager {
 	}
 	
 	private void drawCarnivorous(Graphics g, int xLvlOffset) {
-		for(Carnivorous c : carnivorous)
-			g.drawImage(carnivorousArr[c.getEneymyState()][c.getAniIndex()], (int)(c.getHitbox().x - CARNIVOROUS_DRAWOFFSET_X) - xLvlOffset , (int)c.getHitbox().y - CARNIVOROUS_DRAWOFFSET_Y, CARNIVOROUS_WIDTH, CARNIVOROUS_HEIGHT, null);
-//		    c.drawHitbox(g,xLvlOffset);
+		for(Carnivorous c : carnivorous) 
+			if (c.isActive()) {
+				g.drawImage(carnivorousArr[c.getEneymyState()][c.getAniIndex()], 
+					(int)c.getHitbox().x - xLvlOffset - CARNIVOROUS_DRAWOFFSET_X + c.flipX() + 20 , 
+					(int)c.getHitbox().y - CARNIVOROUS_DRAWOFFSET_Y,
+					CARNIVOROUS_WIDTH * c.flipW() , CARNIVOROUS_HEIGHT, null);
+//		        c.drawHitbox(g,xLvlOffset);
+//				c.drawAttackBox(g, xLvlOffset);
+			}
+		
+	}
+	
+	public void checkEnemyHit(Rectangle2D.Float attackBox) {
+		for(Carnivorous c : carnivorous) 
+			if(c.isActive())
+				if(attackBox.intersects(c.getHitbox())) {
+					c.hurt(10);
+					return;
+			}
 		
 	}
 
@@ -47,6 +65,12 @@ public class EnemyManager {
 		for(int j = 0; j < carnivorousArr.length; j++ )
 			for(int i = 0; i < carnivorousArr[j].length; i++)
 				carnivorousArr[j][i] = temp.getSubimage(i * CARNIVOROUS_WIDTH_DEFAULT, j * CARNIVOROUS_HEIGHT_DEFAULT, CARNIVOROUS_WIDTH_DEFAULT, CARNIVOROUS_HEIGHT_DEFAULT);
+		
+	}
+	
+	public void resetAllEnemies() {
+		for(Carnivorous c : carnivorous) 
+			c.resetEnemy();
 		
 	}
 
