@@ -5,6 +5,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import Level.levels;
 import gamestates.Playing;
 import utilz.LoadSave;
 import static utilz.Constants.EnemyConstants.*;
@@ -18,18 +19,22 @@ public class EnemyManager {
 	public EnemyManager(Playing playing) {
 		this.playing = playing;
 		loadEnemyImgs();
-		addEnemies();
 	}
 	
-	private void addEnemies() {
-		carnivorous = LoadSave.GetCarnivorous();
+	public void loadEnemies(levels Levels) {
+		carnivorous = Levels.getCarnivorous();
 		
 	}
 
 	public void update(int[][] lvlData,Player player) {
+		boolean isAnyActive = false;
 		for(Carnivorous c : carnivorous)
-			if(c.isActive())
+			if(c.isActive()) {
 				c.update(lvlData,player);
+				isAnyActive = true;
+			}
+		if(!isAnyActive)
+			playing.setLevelCompleted(true);
 	}
 	
 	public void draw(Graphics g, int xLvlOffset) {
