@@ -15,13 +15,11 @@ import main.Game;
 
 public class Carnivorous extends Enemy {
 	
-	// AttackBox
-	private Rectangle2D.Float attackBox;
 	private int attackBoxOffsetX;
 
 	public Carnivorous(float x, float y) {
 		super(x, y, CARNIVOROUS_WIDTH, CARNIVOROUS_HEIGHT, CARNIVOROUS);
-		initHitbox(x,y,(int)(22 * Game.SCALE),(int)(30 * Game.SCALE));
+		initHitbox(22,30);
 		initAttackBox();
 	}
 	
@@ -52,7 +50,7 @@ public class Carnivorous extends Enemy {
 		if(inAir) 
 			updateInAir(lvlData);
 		else {
-			switch(enemyState) {
+			switch(state) {
 			case IDLE:
 				newState(RUNNING);
 				break;
@@ -75,12 +73,6 @@ public class Carnivorous extends Enemy {
 			}
 		}
 		
-	}
-
-
-	public void drawAttackBox(Graphics g, int xLvlOffset) {
-		g.setColor(Color.red);
-		g.drawRect((int)(attackBox.x - xLvlOffset),(int) attackBox.y,(int) attackBox.width,(int) attackBox.height);
 	}
 	
 	public int flipX() {

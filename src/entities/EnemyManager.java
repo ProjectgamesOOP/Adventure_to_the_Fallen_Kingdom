@@ -44,7 +44,7 @@ public class EnemyManager {
 	private void drawCarnivorous(Graphics g, int xLvlOffset) {
 		for(Carnivorous c : carnivorous) 
 			if (c.isActive()) {
-				g.drawImage(carnivorousArr[c.getEneymyState()][c.getAniIndex()], 
+				g.drawImage(carnivorousArr[c.getEnemyState()][c.getAniIndex()], 
 					(int)c.getHitbox().x - xLvlOffset - CARNIVOROUS_DRAWOFFSET_X + c.flipX() + 20 , 
 					(int)c.getHitbox().y - CARNIVOROUS_DRAWOFFSET_Y,
 					CARNIVOROUS_WIDTH * c.flipW() , CARNIVOROUS_HEIGHT, null);
