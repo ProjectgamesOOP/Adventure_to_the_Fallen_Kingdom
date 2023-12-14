@@ -1,4 +1,3 @@
-
 package entities;
 
 import java.awt.Color;
@@ -10,6 +9,13 @@ public abstract class Entity {
 	protected float x, y;
 	protected int width, height;
 	protected Rectangle2D.Float hitbox;
+	protected int aniTick, aniIndex;
+	protected int state;
+	protected float airSpeed;
+	protected boolean inAir = false;
+	protected Rectangle2D.Float attackBox;
+	protected float walkSpeed;
+	protected float pushDrawOffset;
 
 	public Entity(float x, float y, int width, int height) {
 		this.x = x;
@@ -18,7 +24,7 @@ public abstract class Entity {
 		this.height = height;
 
 	}
-	
+
 	protected void drawHitbox(Graphics g, int xLvlOffset) {
 		g.setColor(Color.PINK);
 		g.drawRect((int)hitbox.x - xLvlOffset,(int)hitbox.y, (int) hitbox.width, (int) hitbox.height);
@@ -32,5 +38,18 @@ public abstract class Entity {
 		return hitbox;
 	}
 
+	public int getState() {
+		return state;
+	}
+
+	public int getAniIndex() {
+		return aniIndex;
+	}
+	
+	protected void newState(int state) {
+		this.state = state;
+		aniTick = 0;
+		aniIndex = 0;
+	}
 
 }

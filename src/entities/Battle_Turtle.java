@@ -13,14 +13,14 @@ import java.awt.geom.Rectangle2D;
 
 import main.Game;
 
-public class Carnivorous extends Enemy {
+public class Battle_Turtle extends Enemy {
 	
 	// AttackBox
 	private Rectangle2D.Float attackBox;
 	private int attackBoxOffsetX;
 
-	public Carnivorous(float x, float y) {
-		super(x, y, CARNIVOROUS_WIDTH, CARNIVOROUS_HEIGHT, CARNIVOROUS);
+	public Battle_Turtle(float x, float y) {
+		super(x, y, BATTLE_TURTLE_WIDTH, BATTLE_TURTLE_HEIGHT, BATTLE_TURTLE);
 		initHitbox(x,y,(int)(22 * Game.SCALE),(int)(30 * Game.SCALE));
 		initAttackBox();
 	}
@@ -82,4 +82,5 @@ public class Carnivorous extends Enemy {
 		g.setColor(Color.red);
 		g.drawRect((int)(attackBox.x - xLvlOffset),(int) attackBox.y,(int) attackBox.width,(int) attackBox.height);
 	}
+
 }

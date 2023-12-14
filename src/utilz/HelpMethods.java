@@ -1,6 +1,8 @@
 package utilz;
 
+import static utilz.Constants.EnemyConstants.BATTLE_TURTLE;
 import static utilz.Constants.EnemyConstants.CARNIVOROUS;
+import static utilz.Constants.EnemyConstants.BIG_BLOATED;
 
 import java.awt.Color;
 import java.awt.Point;
@@ -8,7 +10,9 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import entities.Battle_Turtle;
 import entities.Carnivorous;
+import entities.Big_Bloated;
 import main.Game;
 
 public class HelpMethods {
@@ -131,6 +135,34 @@ public class HelpMethods {
 				int value = color.getGreen();
 				if (value == CARNIVOROUS)
 					list.add(new Carnivorous(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
+				
+			}
+		return list;
+	}
+
+	public static ArrayList<Battle_Turtle> GetBattleTurtle(BufferedImage img) {
+		
+		ArrayList<Battle_Turtle> list = new ArrayList<>();
+		for (int j = 0; j < img.getHeight(); j++)
+			for (int i = 0; i < img.getWidth(); i++) {
+				Color color = new Color(img.getRGB(i, j));
+				int value = color.getGreen();
+				if (value == BATTLE_TURTLE)
+					list.add(new Battle_Turtle(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
+				
+			}
+		return list;
+	}
+
+	public static ArrayList<Big_Bloated> GetBigBloated(BufferedImage img) {
+		
+		ArrayList<Big_Bloated> list = new ArrayList<>();
+		for (int j = 0; j < img.getHeight(); j++)
+			for (int i = 0; i < img.getWidth(); i++) {
+				Color color = new Color(img.getRGB(i, j));
+				int value = color.getGreen();
+				if (value == BIG_BLOATED)
+					list.add(new Big_Bloated(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
 				
 			}
 		return list;

@@ -15,6 +15,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.util.Random;
+
+import static utilz.Constants.Environment.*;
 
 public class Playing extends State implements Statemethods {
     private Player player;
@@ -30,7 +33,10 @@ public class Playing extends State implements Statemethods {
 	private int rightBorder = (int) (0.8 * Game.GAME_WIDTH);
 	private int maxLvlOffsetX;
 	
-	private BufferedImage backgroundImg;
+	public int currentLevelIndex = 0; 
+	private BufferedImage backgroundImg, bigcloudImg, smallcloudImg;
+	private int[] smallCloudsPos;
+	private Random rnd = new Random();
 	
 	private boolean gameOver;
 	private boolean lvlCompleted;
@@ -39,8 +45,15 @@ public class Playing extends State implements Statemethods {
     public Playing(Game game) {
         super(game);
         initClasses();
+
+		// Setting the background playing and all the environment in the background
+        backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP1); // default background will be background1
+		bigcloudImg = LoadSave.GetSpriteAtlas(LoadSave.WHITE_BIG_CLOUDS); // default big clouds
+        smallcloudImg = LoadSave.GetSpriteAtlas(LoadSave.WHITE_SMALL_CLOUDS); // default small clouds
+        smallCloudsPos = new int[8];
+		for (int i = 0; i < smallCloudsPos.length; i++)
+			smallCloudsPos[i] = (int) (90 * Game.SCALE) + rnd.nextInt((int) (100 * Game.SCALE));
         
-        backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP1);
         calcLvlOffset();
 		loadStartLevel();
     }
@@ -54,9 +67,28 @@ public class Playing extends State implements Statemethods {
 	}
 	
 	public void loadNextLevel() {
-		resetAll();
+		// resetAll();
+        // levelManager.setLevelIndex(levelManager.getLevelIndex());
 		levelManager.loadNextLevel();
 		player.setSpawn(levelManager.getCurrentLevel().getPlayerSpawn());
+		resetAll();
+
+		// Set background based on the current level index
+        switch (currentLevelIndex) {
+            case 0:
+                setBackgroundImage(LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP2));
+                setBigCloudImage(LoadSave.GetSpriteAtlas(LoadSave.BLACK_BIG_CLOUDS));
+                setSmallCloudImage(LoadSave.GetSpriteAtlas(LoadSave.BLACK_SMALL_CLOUDS));
+                break;
+            case 1:
+                setBackgroundImage(LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP3));
+                setBigCloudImage(LoadSave.GetSpriteAtlas(LoadSave.GREY_BIG_CLOUDS));
+                setSmallCloudImage(LoadSave.GetSpriteAtlas(LoadSave.GREY_SMALL_CLOUDS));
+                break;
+            
+        }
+        
+        currentLevelIndex++; // Increment the current level index for the next level
 	}
 	
     private void initClasses() {
@@ -80,7 +112,7 @@ public class Playing extends State implements Statemethods {
 			levelCompleted.update();
 		} else if (!gameOver) {
 			levelManager.update();
-			player.update();
+			player.update();    
 			enemyManager.update(levelManager.getCurrentLevel().getLevelData(), player);
 			checkCloseToBorder();
 		}
@@ -102,9 +134,36 @@ public class Playing extends State implements Statemethods {
 			xLvlOffset = 0;
 		
 	}
+
+	//setBackgroundImage() method
+    public void setBackgroundImage(BufferedImage backgroundImage) {
+        // Set the background image for the playing state
+        this.backgroundImg = backgroundImage;
+    }
+    
+    //setBigCloudImage() method
+    public void setBigCloudImage(BufferedImage bigcloudImage) {
+        // Set the cloud image for the playing state
+        this.bigcloudImg = bigcloudImage;
+    }
+    
+    //setSmallCloudImage() method
+    public void setSmallCloudImage(BufferedImage smallcloudImage) {
+        // Set the cloud image for the playing state
+        this.smallcloudImg = smallcloudImage;
+    }
+
 	@Override
     public void draw(Graphics g) {
-		g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+		//new modify
+		if (backgroundImg != null) {
+			g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+		}
+		//old modify
+		//g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+		
+		//drawing big clouds
+		drawBigClouds(g);
 		
         levelManager.draw(g, xLvlOffset);
         player.render(g, xLvlOffset);
@@ -119,6 +178,14 @@ public class Playing extends State implements Statemethods {
         else if (lvlCompleted)
 			levelCompleted.draw(g);
     }
+
+	// drawClouds method()
+	private void drawBigClouds(Graphics g) {
+		for (int i = 0; i < 3; i++) // for loop to make the big cloud throught all the map
+			g.drawImage(bigcloudImg, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
+		for (int i = 0; i < smallCloudsPos.length; i++) // for loop to make the small cloud randomly throught all the map
+			g.drawImage(smallcloudImg, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
+	}
 	
 	public void resetAll() {
 		gameOver = false;

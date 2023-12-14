@@ -2,13 +2,13 @@ package entities;
 
 import static utilz.Constants.EnemyConstants.*;
 import static utilz.HelpMethods.*;
-
+import static utilz.Constants.*;
 import java.awt.geom.Rectangle2D;
 
-import gamestates.Gamestate;
 
 import static utilz.Constants.Directions.*;
 
+import gamestates.Playing;
 import main.Game;
 
 public abstract class Enemy extends Entity{
@@ -24,8 +24,10 @@ public abstract class Enemy extends Entity{
 	protected float attackDistance = Game.TILES_SIZE;
 	protected int maxHealth;
 	protected int currentHealth;
+
 	protected boolean active = true;
 	protected boolean attackChecked;
+	protected int attackBoxOffsetX;
 
 	public Enemy(float x, float y, int width, int height, int enemyType) {
 		super(x, y, width, height);
@@ -35,6 +37,7 @@ public abstract class Enemy extends Entity{
 		currentHealth = maxHealth;
 		
 	}
+	
 	
 	protected void firstUpdateCheck(int[][] lvlData) {
 		if(!IsEntityOnFloor(hitbox, lvlData)) 
@@ -126,12 +129,12 @@ public abstract class Enemy extends Entity{
 			aniTick = 0;
 			aniIndex++;
 			if(aniIndex >= GetSpriteAmount(enemyType, enemyState)) {
-				aniIndex = 0;
-				
-				
-				switch(enemyState) {
-				case ATTACK -> enemyState = IDLE;
-				case DEAD -> active = false;
+				if (enemyType == CARNIVOROUS || enemyType == BATTLE_TURTLE || enemyType == BIG_BLOATED) {
+					aniIndex = 0;
+					switch(enemyState) {
+					case ATTACK, HIT -> newState(IDLE);
+					case DEAD -> active = false;
+					}
 				}
 			}
 	    }	
@@ -155,15 +158,21 @@ public abstract class Enemy extends Entity{
 		active = true;
 		fallSpeed = 0;
 	}
+	
+	public int flipX() {
+		if (walkDir == RIGHT)
+			return width;
+		else
+			return 0;
+	}
 
-	public int getAniIndex() {
-		return aniIndex;
+	public int flipW() {
+		if (walkDir == RIGHT)
+			return -1;
+		else
+			return 1;
 	}
-	
-	public int getEneymyState() {
-		return enemyState;
-	}
-	
+
 	public boolean isActive() {
 		return active;
 	}

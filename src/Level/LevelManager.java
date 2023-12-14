@@ -21,6 +21,23 @@ public class LevelManager {
 		Levels = new ArrayList<>();
 		buildAllLevels();
 	}
+	
+
+	public void loadNextLevel() {
+		lvlIndex++;
+	if (lvlIndex >= Levels.size()) {
+		//System.out.println(lvlIndex + "and" + levels.size());
+		lvlIndex = 0;
+		//System.out.println("No more levels! Game Completed!");
+		Gamestate.state = Gamestate.MENU;
+	}
+
+	levels newLevel = Levels.get(lvlIndex);
+	//System.out.println(lvlIndex);
+	game.getPlaying().getEnemyManager().loadEnemies(newLevel);
+	game.getPlaying().getPlayer().loadLvlData(newLevel.getLevelData());
+	game.getPlaying().setMaxLvlOffset(newLevel.getLvlOffset());
+}
 
 	private void buildAllLevels() {
 		BufferedImage[] allLevels = LoadSave.GetAllLevels();
@@ -46,19 +63,6 @@ public class LevelManager {
 				g.drawImage(levelSprite[index], Game.TILES_SIZE * i - xLvlOffset, Game.TILES_SIZE * j, Game.TILES_SIZE, Game.TILES_SIZE, null);
 			}
 	}
-	public void loadNextLevel() {
-		lvlIndex++;
-		if (lvlIndex >= Levels.size()) {
-			lvlIndex = 0;
-			System.out.println("No more levels! Game Completed!");
-			Gamestate.state = Gamestate.MENU;
-		}
-
-		levels newLevel = Levels.get(lvlIndex);
-		game.getPlaying().getEnemyManager().loadEnemies(newLevel);
-		game.getPlaying().getPlayer().loadLvlData(newLevel.getLevelData());
-		game.getPlaying().setMaxLvlOffset(newLevel.getLvlOffset());
-	}
 	
 	public void update() {
 
@@ -72,4 +76,12 @@ public class LevelManager {
 		return Levels.size();
 	}
 
+	public int getLevelIndex() {
+		return lvlIndex;
+	}
+	
+	//new modify - setLevelIndex() method
+	public void setLevelIndex(int lvlIndex) {
+		this.lvlIndex = lvlIndex;
+	}
 }
