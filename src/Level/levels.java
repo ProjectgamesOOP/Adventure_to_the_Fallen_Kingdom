@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 import entities.Carnivorous;
 import main.Game;
+import objects.GameContainer;
+import objects.Potion;
+import objects.Spike;
+import utilz.HelpMethods;
+
 import static utilz.HelpMethods.GetLevelData;
 import static utilz.HelpMethods.GetCarnivorous;
 import static utilz.HelpMethods.GetPlayerSpawn;
@@ -13,19 +18,30 @@ import static utilz.HelpMethods.GetPlayerSpawn;
 public class levels {
 
 	private BufferedImage img;
-	private ArrayList<Carnivorous> Carnivorous;
 	private int[][] lvlData;
 	private int lvlTilesWide;
 	private int maxTilesOffset;
 	private int maxLvlOffsetX;
 	private Point playerSpawn;
 
+	private ArrayList<Carnivorous> Carnivorous;
+	private ArrayList<Potion> potions;
+	private ArrayList<GameContainer> containers;
+	private ArrayList<Spike> spikes;
+	
 	public levels(BufferedImage img) {
 		this.img = img;
 		createLevelData();
 		createEnemies();
 		calcLvlOffsets();
 		calcPlayerSpawn();
+		createPotions();
+		createContainers();
+		createSpikes();
+	}
+	private void createSpikes() {
+		spikes = HelpMethods.GetSpikes(img);
+		
 	}
 	private void calcPlayerSpawn() {
 		playerSpawn = GetPlayerSpawn(img);
@@ -64,5 +80,23 @@ public class levels {
 	public int[][] getLevelData() {
 		return lvlData;
 	}
-
+	public ArrayList<Potion> getPotions() {
+		return potions;
+	}
+	
+	private void createPotions() {
+		potions = HelpMethods.GetPotions(img);
+	}
+	
+	private void createContainers() {
+		containers = HelpMethods.GetContainers(img);
+	}
+	
+	public ArrayList<GameContainer> getContainers() {
+		return containers;
+	}
+	public ArrayList<Spike> getSpikes() {
+		return spikes;
+	}
+	
 }
