@@ -4,16 +4,16 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import entities.Big_Bloated;
 import entities.Carnivorous;
+import entities.Turtle;
 import main.Game;
 import objects.GameContainer;
 import objects.Potion;
 import objects.Spike;
 import utilz.HelpMethods;
 
-import static utilz.HelpMethods.GetLevelData;
-import static utilz.HelpMethods.GetCarnivorous;
-import static utilz.HelpMethods.GetPlayerSpawn;
+import static utilz.HelpMethods.*;
 
 public class levels {
 
@@ -25,6 +25,8 @@ public class levels {
 	private Point playerSpawn;
 
 	private ArrayList<Carnivorous> Carnivorous;
+	private ArrayList<Turtle> Turtle;
+	private ArrayList<Big_Bloated> Big_Bloated;
 	private ArrayList<Potion> potions;
 	private ArrayList<GameContainer> containers;
 	private ArrayList<Spike> spikes;
@@ -55,10 +57,18 @@ public class levels {
 
 	private void createEnemies() {
 		Carnivorous = GetCarnivorous(img);
+		Turtle = GetTurtle(img);
+		Big_Bloated = GetBigBloated(img);
 	}
 	
 	public ArrayList<Carnivorous> getCarnivorous() {
 		return Carnivorous;
+	}
+	public ArrayList<Turtle> getTurtle() {
+		return Turtle;
+	}
+	public ArrayList<Big_Bloated> getBigBloated() {
+		return Big_Bloated;
 	}
 	
 	public int getLvlOffset() {

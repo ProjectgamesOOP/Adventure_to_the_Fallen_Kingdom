@@ -27,7 +27,11 @@ public class LoadSave {
 	public static final String URM_BUTTONS = "urm_buttons.png";
 	public static final String VOLUME_BUTTONS = "volume_buttons.png";
 	public static final String PLAYING_BG_IMG_MAP1 = "playing_bg_image_map1.png";
-	public static final String CARNIVOROUS_SPRITE  = "spritesheet.png";
+	
+	public static final String CARNIVOROUS_SPRITE  = "carnivorous.png";
+	public static final String TURTLE_SPRITE = "Battle_Turtle.png";
+	public static final String BIG_BLOATED_SPRITE = "Big_Bloated.png";
+	
 	public static final String HEALTH_POWER_BAR  = "health_power_bar.png";
 	public static final String Level_Completed  = "completed_sprite.png";
 	
@@ -36,21 +40,18 @@ public class LoadSave {
 	public static final String Trap  = "trap_atlas.png";
 	
 	public static BufferedImage GetSpriteAtlas(String fileName) {
-		BufferedImage img = null;
-		InputStream is = LoadSave.class.getResourceAsStream("/" + fileName);
-		try {
-			img = ImageIO.read(is);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				is.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		return img;
+	    BufferedImage img = null;
+	    try {
+	        InputStream is = LoadSave.class.getResourceAsStream("/" + fileName);
+	        if (is != null) {
+	            img = ImageIO.read(is);
+	        } else {
+	            System.out.println("Failed to find file: " + fileName);
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	    return img;
 	}
 	
 	
@@ -85,6 +86,8 @@ public class LoadSave {
 
 		return imgs;
 	}
+	
+	
 	
 
 

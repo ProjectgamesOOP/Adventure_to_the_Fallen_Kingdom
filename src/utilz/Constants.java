@@ -49,20 +49,40 @@ public class Constants {
 	
 	public static class EnemyConstants {
 		public  static final int CARNIVOROUS = 0;
+		public  static final int TURTLE = 1;
+		public  static final int BIG_BLOATED = 2;
+
 		
-		public static final int ATTACK = 0;
-		public static final int DEAD = 1;
-		public static final int RUNNING = 2;
-		public static final int IDLE = 3;
+		public static final int IDLE = 0;
+		public static final int RUNNING = 1;
+		public static final int ATTACK = 2;
+		public static final int HIT = 3;
+		public static final int DEAD = 4;
+
 		
 		public static final int CARNIVOROUS_WIDTH_DEFAULT = 96;
 		public static final int CARNIVOROUS_HEIGHT_DEFAULT = 98;
-		
 		public static final int CARNIVOROUS_WIDTH = (int)(CARNIVOROUS_WIDTH_DEFAULT * Game.SCALE);
 		public static final int CARNIVOROUS_HEIGHT = (int)(CARNIVOROUS_HEIGHT_DEFAULT * Game.SCALE);
-		
 		public static final int CARNIVOROUS_DRAWOFFSET_X = (int)(68 * Game.SCALE);
 		public static final int CARNIVOROUS_DRAWOFFSET_Y = (int)(65 * Game.SCALE);
+		
+		public static final int TURTLE_WIDTH_DEFAULT = 72;
+		public static final int TURTLE_HEIGHT_DEFAULT = 74;
+		public static final int TURTLE_WIDTH = (int)(TURTLE_WIDTH_DEFAULT * Game.SCALE);
+		public static final int TURTLE_HEIGHT = (int)(TURTLE_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int TURTLE_DRAWOFFSET_X = (int)(68 * Game.SCALE);
+		public static final int TURTLE_DRAWOFFSET_Y = (int)(15 * Game.SCALE);
+		
+		
+		public static final int BIG_BLOATED_WIDTH_DEFAULT = 72;
+		public static final int BIG_BLOATED_HEIGHT_DEFAULT = 74;
+		public static final int BIG_BLOATED_WIDTH = (int)(BIG_BLOATED_WIDTH_DEFAULT * Game.SCALE);
+		public static final int BIG_BLOATED_HEIGHT = (int)(BIG_BLOATED_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int BIG_BLOATED_DRAWOFFSET_X = (int)(68 * Game.SCALE);
+		public static final int BIG_BLOATED_DRAWOFFSET_Y = (int)(15 * Game.SCALE);
+		
+
 		
 		public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 			
@@ -75,16 +95,49 @@ public class Constants {
 					return 6;
 				case ATTACK:
 					return 6;
+				case HIT:
+					return 4;
 				case DEAD:
 					return 6;
 				}
+			case TURTLE:
+				switch(enemy_state) {
+				case IDLE:
+					return 4;
+				case RUNNING:
+					return 4;
+				case ATTACK:
+					return 4;
+				case HIT:
+					return 2;
+				case DEAD:
+					return 4;
+				}
+			case BIG_BLOATED:
+				switch(enemy_state) {
+				case IDLE:
+					return 4;
+				case RUNNING:
+					return 6;
+				case ATTACK:
+					return 6;
+				case HIT:
+					return 2;
+				case DEAD:
+					return 4;
+				}
 			}
+			
 			
 			return 0;
 		}
 		public static int GetMaxHealth(int enemy_type) {
 			switch (enemy_type) {
 			case CARNIVOROUS:
+				return 10;
+			case TURTLE:
+				return 10;
+			case BIG_BLOATED:
 				return 10;
 			default:
 				return 1;
@@ -94,7 +147,11 @@ public class Constants {
 		public static int GetEnemyDmg(int enemy_type) {
 			switch (enemy_type) {
 			case CARNIVOROUS:
-				return 15;
+				return 10;
+			case TURTLE:
+				return 10;
+			case BIG_BLOATED:
+				return 10;
 			default:
 				return 0;
 			}

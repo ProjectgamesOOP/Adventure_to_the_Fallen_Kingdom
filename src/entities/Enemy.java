@@ -26,6 +26,7 @@ public abstract class Enemy extends Entity{
 	public Enemy(float x, float y, int width, int height, int enemyType) {
 		super(x, y, width, height);
 		this.enemyType = enemyType;
+		initHitbox(width,height);
 		maxHealth = GetMaxHealth(enemyType);
 		currentHealth = maxHealth;
 		walkSpeed = Game.SCALE * 0.45f;
@@ -105,7 +106,7 @@ public abstract class Enemy extends Entity{
 		if(currentHealth <= 0)
 			newState(DEAD);
 		else
-			newState(ATTACK);
+			newState(HIT);
 	}
 	
 	
@@ -126,7 +127,7 @@ public abstract class Enemy extends Entity{
 				
 				
 				switch(state) {
-				case ATTACK -> state = IDLE;
+				case ATTACK,HIT -> state = IDLE;
 				case DEAD -> active = false;
 				}
 			}
