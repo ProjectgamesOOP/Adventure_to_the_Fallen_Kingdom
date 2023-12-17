@@ -134,11 +134,11 @@ public class Constants {
 		public static int GetMaxHealth(int enemy_type) {
 			switch (enemy_type) {
 			case CARNIVOROUS:
-				return 10;
+				return 20;
 			case TURTLE:
-				return 10;
+				return 15;
 			case BIG_BLOATED:
-				return 10;
+				return 30;
 			default:
 				return 1;
 			}
@@ -149,14 +149,27 @@ public class Constants {
 			case CARNIVOROUS:
 				return 10;
 			case TURTLE:
-				return 10;
+				return 5;
 			case BIG_BLOATED:
-				return 10;
+				return 15;
 			default:
 				return 0;
 			}
 		}
 		
+	}
+
+	//Environment Class for the clouds constants
+	public static class Environment {
+		public static final int BIG_CLOUD_WIDTH_DEFAULT = 448;
+		public static final int BIG_CLOUD_HEIGHT_DEFAULT = 101;
+		public static final int SMALL_CLOUD_WIDTH_DEFAULT = 74;
+		public static final int SMALL_CLOUD_HEIGHT_DEFAULT = 24;
+		
+		public static final int BIG_CLOUD_WIDTH = (int) (BIG_CLOUD_WIDTH_DEFAULT * Game.SCALE);
+		public static final int BIG_CLOUD_HEIGHT = (int) (BIG_CLOUD_HEIGHT_DEFAULT * Game.SCALE);
+		public static final int SMALL_CLOUD_WIDTH = (int) (SMALL_CLOUD_WIDTH_DEFAULT * Game.SCALE);
+		public static final int SMALL_CLOUD_HEIGHT = (int) (SMALL_CLOUD_HEIGHT_DEFAULT * Game.SCALE);
 	}
 
 	public static class UI {
