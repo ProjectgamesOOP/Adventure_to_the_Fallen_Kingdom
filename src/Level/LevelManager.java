@@ -73,4 +73,13 @@ public class LevelManager {
 		return Levels.size();
 	}
 
+	//new modify - getLevelIndex() method
+	public int getLevelIndex() {
+		return lvlIndex;
+	}
+	
+	//new modify - setLevelIndex() method
+	public void setLevelIndex(int lvlIndex) {
+		this.lvlIndex = lvlIndex;
+	}
 }
