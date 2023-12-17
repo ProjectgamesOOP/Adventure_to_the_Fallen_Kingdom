@@ -26,7 +26,19 @@ public class LoadSave {
 	public static final String SOUND_BUTTONS = "sound_button.png";
 	public static final String URM_BUTTONS = "urm_buttons.png";
 	public static final String VOLUME_BUTTONS = "volume_buttons.png";
-	public static final String PLAYING_BG_IMG_MAP1 = "playing_bg_image_map1.png";
+
+	//constants variables for the background 
+	public static final String PLAYING_BG_IMG_MAP1 = "playing_bg_img_map1.png";
+	public static final String PLAYING_BG_IMG_MAP2 = "playing_bg_img_map2.png";
+	public static final String PLAYING_BG_IMG_MAP3 = "playing_bg_img_map3.png";
+
+	//constants variables for the environment
+	public static final String WHITE_BIG_CLOUDS = "white_big_clouds.png";
+	public static final String BLACK_BIG_CLOUDS = "black_big_clouds.png";
+	public static final String GREY_BIG_CLOUDS = "grey_big_clouds.png";
+	public static final String WHITE_SMALL_CLOUDS = "white_small_clouds.png";
+	public static final String BLACK_SMALL_CLOUDS = "black_small_clouds.png";
+	public static final String GREY_SMALL_CLOUDS = "grey_small_clouds.png";
 	
 	public static final String CARNIVOROUS_SPRITE  = "carnivorous.png";
 	public static final String TURTLE_SPRITE = "Battle_Turtle.png";
