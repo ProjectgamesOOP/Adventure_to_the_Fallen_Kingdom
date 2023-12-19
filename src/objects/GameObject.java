@@ -33,7 +33,8 @@ public class GameObject {
 				if (objType == BARREL || objType == BOX) {
 					doAnimation = false; // after destroyed, stop animating
 					active = false;
-				}
+				}else if (objType == CANNON_LEFT || objType == CANNON_RIGHT)
+					doAnimation = false;
 			}
 		}
 	}
@@ -43,7 +44,7 @@ public class GameObject {
 		aniTick = 0;
 		active = true;
 
-		if (objType == BARREL || objType == BOX)
+		if (objType == BARREL || objType == BOX || objType == CANNON_LEFT || objType == CANNON_RIGHT)
 			doAnimation = false;  // after reset, box doesn't need to animation
 		else
 			doAnimation = true; // potion has animation so it will keep animating after reset

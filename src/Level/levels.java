@@ -8,6 +8,7 @@ import entities.Big_Bloated;
 import entities.Carnivorous;
 import entities.Turtle;
 import main.Game;
+import objects.Cannon;
 import objects.GameContainer;
 import objects.Potion;
 import objects.Spike;
@@ -30,6 +31,7 @@ public class levels {
 	private ArrayList<Potion> potions;
 	private ArrayList<GameContainer> containers;
 	private ArrayList<Spike> spikes;
+	private ArrayList<Cannon> cannons;
 	
 	public levels(BufferedImage img) {
 		this.img = img;
@@ -40,7 +42,14 @@ public class levels {
 		createPotions();
 		createContainers();
 		createSpikes();
+		createCannons();
 	}
+	private void createCannons() {
+		cannons = HelpMethods.GetCannons(img);
+	}
+		
+		
+	
 	private void createSpikes() {
 		spikes = HelpMethods.GetSpikes(img);
 		
@@ -107,6 +116,9 @@ public class levels {
 	}
 	public ArrayList<Spike> getSpikes() {
 		return spikes;
+	}
+	public ArrayList<Cannon> getCannons(){
+		return cannons;
 	}
 	
 }

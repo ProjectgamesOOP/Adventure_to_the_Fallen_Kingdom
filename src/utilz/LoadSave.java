@@ -50,6 +50,8 @@ public class LoadSave {
 	public static final String Potion  = "potions_sprites.png";
 	public static final String Container  = "objects_sprites.png";
 	public static final String Trap  = "trap_atlas.png";
+	public static final String CANNON_ATLAS  = "cannon_atlas.png";
+	public static final String CANNON_BALL = "ball.png";
 	
 	public static BufferedImage GetSpriteAtlas(String fileName) {
 	    BufferedImage img = null;
