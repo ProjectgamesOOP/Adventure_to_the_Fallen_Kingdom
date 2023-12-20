@@ -21,7 +21,7 @@ public class SoundButton extends PauseButton {
         soundImgs = new BufferedImage[2][3];
         for (int j = 0; j < soundImgs.length; j++)
             for (int i = 0; i < soundImgs[j].length; i++)
-                soundImgs[j][i] = temp.getSubimage(i * SOUND_SIZE_DEFAULT, j * SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT);
+                soundImgs[j][i] = temp.getSubimage(i * SOUND_SIZE_DEFAULT , j * SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT, SOUND_SIZE_DEFAULT);
     }
 
     public void update() {
@@ -43,7 +43,7 @@ public class SoundButton extends PauseButton {
     }
 
     public void draw(Graphics g) {
-        g.drawImage(soundImgs[rowIndex][colIndex], x, y, width, height, null);
+        g.drawImage(soundImgs[rowIndex][colIndex], x , y + 25, width, height - 20, null);
     }
 
     public boolean isMouseOver() {
