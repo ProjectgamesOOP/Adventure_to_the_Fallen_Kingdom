@@ -1,2 +1,1 @@
-# ProjectgamesOOP
-2D game project of International University (IU - VNUHCM) students
+# **_Knight's Quest: Battle Against Darkness_**
