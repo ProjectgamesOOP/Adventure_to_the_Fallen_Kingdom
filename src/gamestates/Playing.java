@@ -38,7 +38,7 @@ public class Playing extends State implements Statemethods {
 	
 	//new modify for the multiple background
 	public int currentLevelIndex = 0; 
-	private BufferedImage backgroundImg, bigcloudImg, smallcloudImg;
+	private BufferedImage backgroundImg, smallcloudImg;
 	private int[] smallCloudsPos;
 	private Random rnd = new Random();
 	
@@ -53,7 +53,6 @@ public class Playing extends State implements Statemethods {
         
 		// Setting the background playing and all the environment in the background
         backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP1); // default background will be background1
-		bigcloudImg = LoadSave.GetSpriteAtlas(LoadSave.WHITE_BIG_CLOUDS); // default big clouds
         smallcloudImg = LoadSave.GetSpriteAtlas(LoadSave.WHITE_SMALL_CLOUDS); // default small clouds
         smallCloudsPos = new int[8];
 		for (int i = 0; i < smallCloudsPos.length; i++)
@@ -81,12 +80,10 @@ public class Playing extends State implements Statemethods {
         switch (currentLevelIndex) {
             case 0:
                 setBackgroundImage(LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP2));
-                setBigCloudImage(LoadSave.GetSpriteAtlas(LoadSave.BLACK_BIG_CLOUDS));
                 setSmallCloudImage(LoadSave.GetSpriteAtlas(LoadSave.BLACK_SMALL_CLOUDS));
                 break;
             case 1:
                 setBackgroundImage(LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG_MAP3));
-                setBigCloudImage(LoadSave.GetSpriteAtlas(LoadSave.GREY_BIG_CLOUDS));
                 setSmallCloudImage(LoadSave.GetSpriteAtlas(LoadSave.GREY_SMALL_CLOUDS));
                 break;
             
@@ -152,12 +149,6 @@ public class Playing extends State implements Statemethods {
         this.backgroundImg = backgroundImage;
     }
     
-    //setBigCloudImage() method
-    public void setBigCloudImage(BufferedImage bigcloudImage) {
-        // Set the cloud image for the playing state
-        this.bigcloudImg = bigcloudImage;
-    }
-    
     //setSmallCloudImage() method
     public void setSmallCloudImage(BufferedImage smallcloudImage) {
         // Set the cloud image for the playing state
@@ -191,8 +182,6 @@ public class Playing extends State implements Statemethods {
 	
 	// drawClouds method()
 	private void drawBigClouds(Graphics g) {
-		for (int i = 0; i < 3; i++) // for loop to make the big cloud throught all the map
-			g.drawImage(bigcloudImg, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null);
 		for (int i = 0; i < smallCloudsPos.length; i++) // for loop to make the small cloud randomly throught all the map
 			g.drawImage(smallcloudImg, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null);
 	}
