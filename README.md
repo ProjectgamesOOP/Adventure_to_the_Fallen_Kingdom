@@ -1,6 +1,6 @@
 # **_Knight's Quest: Battle Against Darkness_**
 <p>
 <div text-align="center">
-<img src="res\report\poster_game.png" alt="">
+<img src="res\report\postergame.png" alt="">
 </div>
 </p>
