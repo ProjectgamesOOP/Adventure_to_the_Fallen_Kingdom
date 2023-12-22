@@ -23,7 +23,7 @@
 # **1.Background**
 ## a. _Introduction._
 <div style = "text-align: justify"><p>
-This is the game we created for the first semester of Object-Oriented Programming at VNUHCM - International University (2022–2023). This is a timeless game that is based on the 2D Platform Pixel genre and is incredibly well-liked worldwide. Our editing style is vintage, and the protagonist is a Knight who must track down and vanquish the monster. The Kinght faced numerous challenges throughout the route, including slaying demons and traps. We hope you'll find our game project enjoyable.</p>
+This is the game we created for the first semester of Object-Oriented Programming at VNUHCM - International University (2022–2023). This is a timeless game that is based on the 2D Platform Pixel genre and is incredibly well-liked worldwide. Our editing style is classic, and the protagonist is a Knight who must track down and vanquish the monster. The Kinght faced numerous challenges throughout the route, including slaying demons and traps. We hope you'll find our game project enjoyable.</p>
 </div>
 
 ## b. _Team members and task allocation._
