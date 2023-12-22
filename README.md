@@ -1,7 +1,7 @@
-# **_Knight's Quest: Battle Against Darkness_**
+# **_Adventure to the Fallen Kingdom_**
 <p>
 <div text-align="center">
-<img src="res\report\postergame.png" alt="">
+<img src="res\report\new_postergame.png" alt="">
 </div>
 </p>
 
@@ -29,9 +29,9 @@ This is the game we created for the first semester of Object-Oriented Programmin
 ## b. _Team members and task allocation._
 | Number |   Name   | Student ID | Task | Contribute|
 | :----: | :------: | :--------: |:----------------------------------------------:|:------------:|
-|   1    |   Duong Khanh Chang   |   ITITIU21038   |Game Mechanic, GameLoop, Collision, Debugger, Git, Utilz, UML   |      25      |
-|   2    |   Nguyen Quang Sang   |   ITITIU21113   |  GUI, Sound, UML, Maps, Utilz, GameStates     |      25      |
-|   3    |   Phan Manh Son    |   ITITIU21116   |Objects, Levels, Utilz, UML              |      25      |
-|   4    |   Van Phu Minh Sang   |   ITITIU21112   |        Menu, GUI, Utilz, UML         |      25      |
-|   5    |   Nhu   |   ITITIU21332   |        Inputs, Entities, Sound, Utilz, UML          |      25      |
+|   1    |   Duong Khanh Trang   |   ITDSIU21127  |Entities, Collision, Utilz, UML   |      25      |
+|   2    |   Nguyen Quang Sang   |   ITDSIU21113  |Background, Entities, Utilz, UML  |      25      |
+|   3    |   Phan Manh Son       |   ITDSIU21116  |Objects, Levels, Maps, Utilz, UML |      25      |
+|   4    |   Van Phu Minh Sang   |   ITDSIU21112  |Game States, GUI, Utilz, UML      |      25      |
+|   5    |   Tran Quynh Nhu      |   ITDSIU21105  |Inputs, Sound, Object, Utilz, UML |      25      |
 
