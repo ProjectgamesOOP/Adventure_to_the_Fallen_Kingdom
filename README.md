@@ -51,3 +51,13 @@ git status
 <div style = "text-align: justify">
 <p>Our goal was to make a difficult 2D pixel game that would appeal to fans of the classics. Our intention is to test players' resolve and skill sets while instilling in them a sense of admirable accomplishments. With dynamic fighting, a comprehensive gameplay system, and a dark fantasy setting, the game mimics the challenge and sinister tone of the Dark Souls series. It's a hard game because every choice you make can impact the result. Just endurance, in the end, is worthy.</p>
 </div>
+
+# **3. GAME**
+## a. _About the game._
+- Language: [Java](https://www.java.com/en/)
+- IDEs: [VSCode](https://code.visualstudio.com/), [Eclipse](https://www.eclipse.org/)
+- Library: [JavaSwing](https://docs.oracle.com/javase/tutorial/uiswing/)
+- Game Engine: [Java2D](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html)
+- Sound: [JavaSound](https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/Clip.html)
+
+## b. _Content._
