@@ -35,3 +35,14 @@ This is the game we created for the first semester of Object-Oriented Programmin
 |   4    |   Van Phu Minh Sang   |   ITDSIU21112  |Game States, GUI, Utilz, UML      |      25      |
 |   5    |   Tran Quynh Nhu      |   ITDSIU21105  |Inputs, Sound, Object, Utilz, UML |      25      |
 
+## c. _How to run the game_
+
+1. **Step 1:** Clone this Repository from our GitHub.
+```c
+git clone https://github.com/ProjectgamesOOP/ProjectgamesOOP.git
+```
+2. **Step 2:** Open the project source code folder in VS Code or any other IDE that supports Java language and check the file status.
+```c
+git status
+```
+3. **Step 3:** Run the game and enjoy
