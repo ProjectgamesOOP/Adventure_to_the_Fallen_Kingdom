@@ -46,3 +46,8 @@ git clone https://github.com/ProjectgamesOOP/ProjectgamesOOP.git
 git status
 ```
 3. **Step 3:** Run the game and enjoy
+
+# **2. Motivation to Reality**
+<div style = "text-align: justify">
+<p>Our goal was to make a difficult 2D pixel game that would appeal to fans of the classics. Our intention is to test players' resolve and skill sets while instilling in them a sense of admirable accomplishments. With dynamic fighting, a comprehensive gameplay system, and a dark fantasy setting, the game mimics the challenge and sinister tone of the Dark Souls series. It's a hard game because every choice you make can impact the result. Just endurance, in the end, is worthy.</p>
+</div>
