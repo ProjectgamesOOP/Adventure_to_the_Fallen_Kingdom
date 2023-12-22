@@ -19,6 +19,9 @@
 5. [Challenging](#Challenging)
 6. [4 principles of OOP](#Related-to-the-4-principles-of-OOP)
 7. [UML Diagram](#UML-Diagram)
+8. [FAQ](#question-faq)
+9. [Resources](#page_facing_up-resources)
+10. [License](#lock-license)
 
 # **1.Background**
 ## a. _Introduction._
