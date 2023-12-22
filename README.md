@@ -57,6 +57,7 @@ git status
 - Language: [Java](https://www.java.com/en/)
 - IDEs: [VSCode](https://code.visualstudio.com/), [Eclipse](https://www.eclipse.org/)
 - Library: [JavaSwing](https://docs.oracle.com/javase/tutorial/uiswing/)
+- Packages: [java.awt.image](https://docs.oracle.com/javase/8/docs/api/java/awt/Image.html), [java.awt.Graphics](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html), [java.awt.geom.Rectangle2D](https://docs.oracle.com/javase/7/docs/api/java/awt/geom/Rectangle2D.html), [java.awt.Color](https://docs.oracle.com/javase/7/docs/api/java/awt/Color.html), [java.util.ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), [java.awt.Point](https://docs.oracle.com/javase/8/docs/api/java/awt/Point.html), [java.awt.event.MouseEvent](https://docs.oracle.com/javase/8/docs/api/java/awt/event/MouseEvent.html), [java.awt.event.KeyEvent](https://docs.oracle.com/javase/8/docs/api/java/awt/event/KeyEvent.html), [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html), [java.util.ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), [javax.swing.JPanel](https://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html), [java.awt.Dimension](https://docs.oracle.com/javase/8/docs/api/java/awt/Dimension.html)
 - Game Engine: [Java2D](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html)
 - Sound: [JavaSound](https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/Clip.html)
 
@@ -90,3 +91,8 @@ git status
 - Crack up boxes to discover mana or healing pills.
 - Battle the boss with me without getting sick
 </div>
+
+# **4. Design & Capabilities**
+
+<div style = "text-align: justify">
+<p>To manipulate the color of pixels, we make use of BufferedImage(a class in Java that belongs to the java.awt.image package), an object that emulates image files. Each pixel in the game is a tile, entity, or object; distinct elements are indicated by red, green, and blue channels. The Level class uses methods like loadLevelData, loadEntities, and loadObjects to load level data from BufferedImage. These techniques generate related game elements by analyzing the colors of pixels. We maximize the amount of time and effort spent on development by obtaining game resources—such as sounds, music, and images—from Google.</p>
