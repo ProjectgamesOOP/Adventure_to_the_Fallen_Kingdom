@@ -73,3 +73,20 @@ git status
 <img src="res\report\lvl2.png" alt="">
 </div>
 
+## c. _How to play the game._
+
+|  Key  |   Action   |
+|:-----:|:----------:|
+| A  |  Move Left   |
+| D  | Move Right  |
+| Space  | Jump  |
+| Right Click Mouse  | Attack |
+  
+<div style = "text-align: justify">
+
+- Use A, D, Space to move the knight.
+- Use Right Click Mouse to attack the enemies.
+- Watch your mana bar (yellow) below your health bar (red).
+- Crack up boxes to discover mana or healing pills.
+- Battle the boss with me without getting sick
+</div>
