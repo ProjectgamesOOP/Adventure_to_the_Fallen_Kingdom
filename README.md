@@ -125,11 +125,13 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 ## c. _Inheritance._
 <div style = "text-align: justify">
-<p>We utilized inheritance to create subclasses, which allowed for code reuse and established a hierarchical relationship. For enemy types like Bee, Boar, and Snail, we customized behaviors by overriding specific methods. Similarly, we extended object functionality with subclasses like Potion, ObjectContainer, and Spike from GameObject class. Inheritance streamlined development and maintenance, reducing code duplication and promoting modular code. It facilitated the creation of specialized subclasses that built upon parent class attributes and methods, enhancing flexibility and customization.</p>
+<p>By using Inheritance to build subclasses, we were able to establish a hierarchical relationship and reuse code. We overriding particular procedures to alter the actions of Enemies such as Carnivorous, Big Bloated, and Turtle. In a similar vein, we added subclasses from the GameObject class, such as Potion, ObjectContainer, and Spike, to expand the functionality of objects. We did the same thing with the PauseButton class in the UI packages, extending its capabilities with subclasses like the SoundButton, UrmButton, and VolumeButton. By encouraging modular programming and minimizing code duplication, inheritance streamlined development and maintenance. It improved flexibility and customization by making it easier to create specialized subclasses that expanded upon the methods and attributes of parent classes.</p>
 </div>
 
 ## d. _Polymorphism._
 <div style = "text-align: justify">
-<p>We also incorporated polymorphism to enhance code flexibility and generality. The EnemyManager class contains the checkEnemyHit method, which examines collisions between projectiles and enemies. Depending on the specific collision and enemy type, the method executes distinct actions. For instance, when a projectile collides with a boar, it triggers the boar's damage method with 100 damage. Similarly, if an active attackBox collides with a boar, it invokes the boar's damage method with 20 damage.</p>
+<p>To improve the generality and flexibility of the code, we also included polymorphism. The checkEnemyHit function, found in the EnemyManager class, analyzes projectile-enemy collisions. Different actions are carried out by the technique depending on the type of opponent and the particular collision. For example, when a Carnivorous and a projectile meet, the Carnivorous takes 100 damage as a result of the collision. In a similar vein, a Carnivorous's damage mechanism is triggered with 20 damage when an active attackBox collides with it.</p>
 </div>
 </p>
+
+# **7. UML Diagram**
