@@ -102,3 +102,34 @@ git status
 <p>Keyboard-based character control, a slashing technique for attacking the map until it collides with tiles, a tutorial at the first level, difficult bosses at the end level, an energy system for jumping, and potion-based recharging are just a few of the exciting updates.</p>
 <p>We managed different modes and transitions in our game by using the State pattern. We designed our code to be flexible, maintainable, and readable by making separate classes for each state and using a Gamestate class to assign tasks to the current state object. Additionally, the Single Responsibility style is followed by the Constants class, which neatly keeps all game constants in one place. By guaranteeing that every class has a distinct purpose, this design principle encourages code readability and maintainability. Furthermore, constants are arranged by their respective categories (e.g., Projectiles, UI) in the Constants class.</p>
 </div>
+
+# **5. Challenging**
+<div style = "text-align: justify"><p>
+We encountered difficulties when importing assets, managing the codebase with Git and Githup, resolving errors that were difficult to locate (particularly in the Enemies section), and adding novel features. Communication and involvement were difficult when working in pairs.</p>
+</div>
+
+# **6. Related to the 4 principles of OOP**
+<p class="indent">
+<p>Encapsulation, Abstraction, Inheritance, and Polymorphism—the four core concepts of object-oriented programming (OOP)—have become well-understood to us via our curriculum. We meticulously used these guidelines in the design and production of our game project.</p>
+
+## a. _Encapsulation._
+<div style = "text-align: justify">
+<p>In our game project, we have used classes like Player, Game, Enemy (including 3 Enemies class respectively for 3 level game), ... etc to provide encapsulation. Certain methods and properties are encapsulated in each class and kept secret from other classes. The Enemy class, for instance, has methods like isPlayerInRange, ...etc and the attributes like walkSpeed, maxHealth, currentHealth, etc. To allow for safe access and modification, getters and setters are employed. This encourages control and structure in the handling of the game's components.</p>
+</div>
+
+## b. _Abstraction._
+<div style = "text-align: justify">
+<p>Through the use of abstract classes and interfaces, we were able to capture common properties between game objects. The StateMethod interface made guarantee that various game states would behave consistently. Code reuse was encouraged by abstract classes such as Enemy, which encapsulated basic functionality shared by all foes. Modularity and maintainability were enhanced by abstraction, allowing for more effective sharing of features and more simplified development.
+</p>
+</div>
+
+## c. _Inheritance._
+<div style = "text-align: justify">
+<p>We utilized inheritance to create subclasses, which allowed for code reuse and established a hierarchical relationship. For enemy types like Bee, Boar, and Snail, we customized behaviors by overriding specific methods. Similarly, we extended object functionality with subclasses like Potion, ObjectContainer, and Spike from GameObject class. Inheritance streamlined development and maintenance, reducing code duplication and promoting modular code. It facilitated the creation of specialized subclasses that built upon parent class attributes and methods, enhancing flexibility and customization.</p>
+</div>
+
+## d. _Polymorphism._
+<div style = "text-align: justify">
+<p>We also incorporated polymorphism to enhance code flexibility and generality. The EnemyManager class contains the checkEnemyHit method, which examines collisions between projectiles and enemies. Depending on the specific collision and enemy type, the method executes distinct actions. For instance, when a projectile collides with a boar, it triggers the boar's damage method with 100 damage. Similarly, if an active attackBox collides with a boar, it invokes the boar's damage method with 20 damage.</p>
+</div>
+</p>
