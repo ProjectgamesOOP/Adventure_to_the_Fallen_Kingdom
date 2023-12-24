@@ -119,7 +119,7 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 ## b. _Abstraction._
 <div style = "text-align: justify">
-<p>Through the use of abstract classes and interfaces, we were able to capture common properties between game objects. The StateMethod interface made guarantee that various game states would behave consistently. Code reuse was encouraged by abstract classes such as Enemy, which encapsulated basic functionality shared by all foes. Modularity and maintainability were enhanced by abstraction, allowing for more effective sharing of features and more simplified development.
+<p>By employing abstract classes and interfaces, we managed to identify shared characteristics between game components. The StateMethod interface ensured that different game states would function uniformly (e.g., Playing, Menu, and GameOption are examples of classes in the GameStates packages that implement the Statemethods interface). Abstract classes like Enemy and Entity, which encapsulated fundamental behavior common by all enemies, encouraged code reuse. Abstraction improved modularity and maintainability, facilitating more efficient feature sharing and easier development.
 </p>
 </div>
 
