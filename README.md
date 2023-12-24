@@ -32,11 +32,11 @@ This is the game we created for the first semester of Object-Oriented Programmin
 ## b. _Team members and task allocation._
 | Number |   Name   | Student ID | Task | Contribute|
 | :----: | :------: | :--------: |:----------------------------------------------:|:------------:|
-|   1    |   Duong Khanh Trang   |   ITDSIU21127  |Entities, Collision, Utilz, UML   |      25      |
-|   2    |   Nguyen Quang Sang   |   ITDSIU21113  |Background, Entities, Utilz, UML  |      25      |
-|   3    |   Phan Manh Son       |   ITDSIU21116  |Objects, Levels, Maps, Utilz, UML |      25      |
-|   4    |   Van Phu Minh Sang   |   ITDSIU21112  |Game States, GUI, Utilz, UML      |      25      |
-|   5    |   Tran Quynh Nhu      |   ITDSIU21105  |Inputs, Sound, Object, Utilz, UML |      25      |
+|   1    |   Duong Khanh Trang   |   ITDSIU21127  |Entities, Collision, Utilz, UML   |      20      |
+|   2    |   Nguyen Quang Sang   |   ITDSIU21113  |Background, Entities, Utilz, UML  |      20      |
+|   3    |   Phan Manh Son       |   ITDSIU21116  |Objects, Levels, Maps, Utilz, UML |      20      |
+|   4    |   Van Phu Minh Sang   |   ITDSIU21112  |Game States, GUI, Utilz, UML      |      20      |
+|   5    |   Tran Quynh Nhu      |   ITDSIU21105  |Inputs, Sound, Object, Utilz, UML |      20      |
 
 ## c. _How to run the game_
 
@@ -84,12 +84,12 @@ git status
 | A  |  Move Left   |
 | D  | Move Right  |
 | Space  | Jump  |
-| Right Click Mouse  | Attack |
+| Left Click Mouse  | Attack |
   
 <div style = "text-align: justify">
 
 - Use A, D, Space to move the knight.
-- Use Right Click Mouse to attack the enemies.
+- Use Left Click Mouse to attack the enemies.
 - Watch your mana bar (yellow) below your health bar (red).
 - Crack up boxes to discover mana or healing pills.
 - Battle the boss with me without getting sick
