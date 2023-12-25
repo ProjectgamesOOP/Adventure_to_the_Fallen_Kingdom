@@ -35,7 +35,7 @@ public abstract class Entity {
 	
 	protected void drawHitbox(Graphics g, int xLvlOffset) {
 		g.setColor(Color.PINK);
-		g.drawRect((int)hitbox.x - xLvlOffset,(int)hitbox.y, (int) hitbox.width, (int) hitbox.height);
+		g.drawRect((int)hitbox.x - xLvlOffset,(int)hitbox.y - 25, (int) hitbox.width, (int) hitbox.height * 2);
 	}
 
 	protected void initHitbox(int width, int height) {
