@@ -140,3 +140,11 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 # **8. FAQ**
 [If you have any question about this Game Project, plesase leave them here](https://github.com/ProjectgamesOOP/ProjectgamesOOP/issues/9)
+
+# **9. Resources**
+[Oracle Java Documentation](https://docs.oracle.com/javase/tutorial/java/IandI/index.html)
+, [Inheritance in Java Tutorial](https://www.tutorialspoint.com/java/java_inheritance.htm),
+[Polymorphism in Java Tutorial](https://www.tutorialspoint.com/java/java_polymorphism.htm), [Abstraction in Java Tutorial](https://www.tutorialspoint.com/java/java_abstraction.htm), [Encapsulation in Java Tutorial](https://www.tutorialspoint.com/java/java_encapsulation.htm), [Java How to program](https://github.com/nikhil-vytla/Java-How-to-Program-(Early-Objects)-10th-Edition.pdf), [Pixel Spritesheet](https://craftpix.net/)
+
+# **8. License**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
