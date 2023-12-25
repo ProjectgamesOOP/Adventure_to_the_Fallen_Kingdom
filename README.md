@@ -137,3 +137,6 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 </p>
 
 # **7. UML Diagram**
+
+# **8. FAQ**
+[Ask a question](https://github.com/ProjectgamesOOP/ProjectgamesOOP/issues/9)
