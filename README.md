@@ -1,4 +1,6 @@
 # **_Adventure to the Fallen Kingdom_**
+_This is a mini project of a group of students on Object-Oriented Programming subjects at VNUHCM - International University_
+
 <p>
 <div text-align="center">
 <img src="res\report\new_postergame.png" alt="">
