@@ -157,7 +157,7 @@ public class Constants {
 			case TURTLE:
 				return 15;
 			case BIG_BLOATED:
-				return 30;
+				return 45;
 			default:
 				return 1;
 			}
