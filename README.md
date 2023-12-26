@@ -136,7 +136,7 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 ## d. _Polymorphism._
 <div style = "text-align: justify">
-<p>To improve the generality and flexibility of the code, we also included polymorphism. The checkEnemyHit function, found in the EnemyManager class, analyzes projectile-enemy collisions. Different actions are carried out by the technique depending on the type of opponent and the particular collision. For example, when a Carnivorous and a projectile meet, the Carnivorous takes 100 damage as a result of the collision. In a similar vein, a Carnivorous's damage mechanism is triggered with 20 damage when an active attackBox collides with it.</p>
+<p></p>
 </div>
 </p>
 
