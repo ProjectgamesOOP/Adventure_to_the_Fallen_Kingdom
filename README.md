@@ -79,6 +79,10 @@ git status
 <img src="res\report\lvl2.png" alt="">
 </div>
 
+<div text-align="center"><p>Level 2</p>
+<img src="res\report\lvl3.png" alt="">
+</div>
+
 ## c. _How to play the game._
 
 |  Key  |   Action   |
