@@ -142,6 +142,53 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 # **7. UML Diagram**
 
+<div>
+    <h3> a. Audio Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-Audio.png" alt="">
+        </div>
+    <br />
+    <h3>b. Entities Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-Entities.png" alt="">
+        </div>
+    <br />
+    <h3>c. Game states Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-GameStates.png" alt="">
+        </div>
+    <br />
+    <h3>d. Inputs Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-Inputs.png" alt="">
+        </div>
+    <br />
+    <h3>e. Levels Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-levels.png" alt="">
+        </div>
+    <br />
+    <h3>f. Main Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-Main.png" alt="">
+        </div>
+    <br />
+    <h3>g. Objects Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-objects.png" alt="">
+        </div>
+    <br />
+    <h3>h. GUI Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-UI.png" alt="">
+        </div>
+    <br />
+    <h3>i. Utilz Diagram.</h3>
+        <div text-align="center">
+            <img src="res\report\UML-Utilz.png" alt="">
+        </div>
+</div>
+
 # **8. FAQ**
 [If you have any question about this Game Project, plesase leave them here](https://github.com/ProjectgamesOOP/ProjectgamesOOP/issues/9)
 
