@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import Level.levels;
 import gamestates.Playing;
+import objects.Projectile;
 import utilz.LoadSave;
 import static utilz.Constants.EnemyConstants.*;
 
