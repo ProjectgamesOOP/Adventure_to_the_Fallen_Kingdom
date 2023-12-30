@@ -136,7 +136,7 @@ We encountered difficulties when importing assets, managing the codebase with Gi
 
 ## d. _Polymorphism._
 <div style = "text-align: justify">
-<p></p>
+<p>Polymorphism allows objects of different classes to be treated as objects of a common superclass. This is often achieved through method overriding, where subclasses provide a specific implementation of a method that is already defined in their superclass. In the project, the concept of polymorphism is utilized through method overriding in the subclasses of different enemy types (Carnivorous, Turtle, Big_Bloated). Specifically, the update() method is overridden in these subclasses to provide their specific update behavior.</p>
 </div>
 </p>
 
