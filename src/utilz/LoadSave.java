@@ -42,11 +42,11 @@ public class LoadSave {
 	public static final String BIG_BLOATED_SPRITE = "Big_Bloated.png";
 	
 	public static final String HEALTH_POWER_BAR  = "health_power_bar.png";
-	public static final String Level_Completed  = "completed_sprite.png";
+	public static final String LEVEL_COMPLETED  = "completed_sprite.png";
 	
-	public static final String Potion  = "potions_sprites.png";
-	public static final String Container  = "objects_sprites.png";
-	public static final String Trap  = "trap_atlas.png";
+	public static final String POTION  = "potions_sprites.png";
+	public static final String CONTAINER = "objects_sprites.png";
+	public static final String TRAP = "trap_atlas.png";
 	public static final String CANNON_ATLAS  = "cannon_atlas.png";
 	public static final String CANNON_BALL = "ball.png";
 	public static final String DEATH_SCREEN = "death_screen.png";

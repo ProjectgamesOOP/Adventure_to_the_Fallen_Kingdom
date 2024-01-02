@@ -32,7 +32,7 @@ public class LevelCompleted {
 	}
 
 	private void initImg() {
-		img = LoadSave.GetSpriteAtlas(LoadSave.Level_Completed);
+		img = LoadSave.GetSpriteAtlas(LoadSave.LEVEL_COMPLETED);
 		bgW = (int) (img.getWidth() * Game.SCALE);
 		bgH = (int) (img.getHeight() * Game.SCALE);
 		bgX = Game.GAME_WIDTH / 2 - bgW / 2;

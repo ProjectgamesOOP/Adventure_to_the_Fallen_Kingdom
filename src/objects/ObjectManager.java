@@ -78,21 +78,21 @@ public class ObjectManager {
 	}
 
 	private void loadImgs() {
-		BufferedImage potionSprite = LoadSave.GetSpriteAtlas(LoadSave.Potion);
+		BufferedImage potionSprite = LoadSave.GetSpriteAtlas(LoadSave.POTION);
 		potionImgs = new BufferedImage[2][7];
 
 		for (int j = 0; j < potionImgs.length; j++)
 			for (int i = 0; i < potionImgs[j].length; i++)
 				potionImgs[j][i] = potionSprite.getSubimage(12 * i, 16 * j, 12, 16);
 
-		BufferedImage containerSprite = LoadSave.GetSpriteAtlas(LoadSave.Container);
+		BufferedImage containerSprite = LoadSave.GetSpriteAtlas(LoadSave.CONTAINER);
 		containerImgs = new BufferedImage[2][8];
 
 		for (int j = 0; j < containerImgs.length; j++)
 			for (int i = 0; i < containerImgs[j].length; i++)
 				containerImgs[j][i] = containerSprite.getSubimage(40 * i, 30 * j, 40, 30);
 		
-		spikeImg = LoadSave.GetSpriteAtlas(LoadSave.Trap);
+		spikeImg = LoadSave.GetSpriteAtlas(LoadSave.TRAP);
 		
 		cannonImgs = new BufferedImage[7];
 		BufferedImage temp = LoadSave.GetSpriteAtlas(LoadSave.CANNON_ATLAS);
