@@ -98,7 +98,6 @@ git status
 - Use Left Click Mouse to attack the enemies.
 - Watch your mana bar (yellow) below your health bar (red).
 - Crack up boxes to discover mana or healing pills.
-- Battle the boss with me without getting sick
 </div>
 
 # **4. Design & Capabilities**
